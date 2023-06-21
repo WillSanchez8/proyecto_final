@@ -6,7 +6,6 @@ import { CrearProductoComponent } from './components/crear-producto/crear-produc
 import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
 import { HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule
   ],
