@@ -18,8 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
