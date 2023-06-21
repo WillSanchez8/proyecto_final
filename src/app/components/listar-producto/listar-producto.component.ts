@@ -8,15 +8,15 @@ import { Component } from '@angular/core';
 export class ListarProductoComponent {
 
 
-  
 
-  eliminarProducto(id:any){
+
+  /*eliminarProducto(id:any){
     this._productoService.eliminarProducto(id).subscribe(data=>{
       this.toastr.error('producto eliminado con exito',id);
       this.obtenerProductos();
     },error=>{
       console.log(error);
     }); 
-  }
+  }*/
   
 }
