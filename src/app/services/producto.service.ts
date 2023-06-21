@@ -1,9 +1,5 @@
-import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ProductoService {
-
-  constructor() { }
+    getProductos (): Observable<any>{
+        return this.http.get(this.url);
+    }
 }
