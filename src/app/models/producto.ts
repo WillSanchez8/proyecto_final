@@ -11,4 +11,5 @@ export class Producto{
         this.ubicacion=ubicacion;
         this.precio=precio;
     }
+    //PRODUCTO
 }
