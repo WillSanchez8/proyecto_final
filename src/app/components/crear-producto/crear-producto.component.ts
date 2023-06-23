@@ -23,6 +23,7 @@ import { ProductoService } from '../../services/producto.service';
       });
       this.id=this.aRouter.snapshot.paramMap.get('id');
     }
+    //variable
   agregarProducto(){
     console.log(this.productoForm);
     console.log(this.productoForm.get('producto')?.value);
