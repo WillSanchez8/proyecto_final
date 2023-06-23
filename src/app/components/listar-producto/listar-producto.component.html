@@ -1,4 +1,3 @@
-
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -6,7 +5,7 @@
                 <div class="card-body text-center">
                     <span class="titulo">LISTADO DE PRODUCTOS</span>
                     <div class="btn btn-success float-end" routerLink="/crear-producto">NUEVO</div>
-                    <table class="table table-striped mt-3">
+                    <table *ngIf="listProductos.length>0" class="table table-striped mt-3">
                         <thead>
                             <tr>
                                 <th scope="col">Producto</th>
@@ -17,36 +16,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th>CocaCola</th>
-                                <td>Bedida</td>
-                                <td>México</td>
-                                <td>$20.00 MNX</td>
+                            <tr *ngFor="let producto of listProductos">
+                                <th>{{producto.nombre}}</th>
+                                <td>{{producto.categoria}}</td>
+                                <td>{{producto.ubicacion}}</td>
+                                <td>{{producto.precio | currency: 'USD'}}</td>
                                 <td>
                                     <i class="fa-solid fa-pen-to-square text-danger"></i>
-                                    <i class="fa-solid fa-trash text-primary"></i>
+                                    <i (click)="eliminarProducto(producto._id)" class="fa-solid fa-trash text-primary"></i>
                                 </td>
-                            </tr>
-                            <tr>
-                                <th>Mundet sidral</th>
-                                <td>Bedida</td>
-                                <td>México</td>
-                                <td>$20.00 MNX</td>
-                                <td>
-                                    <i class="fa-solid fa-pen-to-square text-danger"></i>
-                                    <i class="fa-solid fa-trash text-primary"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
                         </tbody>
                     </table>
+                    <h5 style="text-align: start; margin-top: 10px;" *ngIf="listProductos.length==0">No hay productos para mostar</h5>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
