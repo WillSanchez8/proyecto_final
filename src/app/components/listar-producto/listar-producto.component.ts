@@ -11,7 +11,10 @@ import { ToastrService } from 'ngx-toastr';
 export class ListarProductoComponent implements OnInit {
   listProductos: Producto[] = [];
 
-  constructor(private _productoService:ProductoService, private toastr:ToastrService){}
+  constructor(
+    private _productoService: ProductoService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.obtenerProductos();
@@ -29,12 +32,15 @@ export class ListarProductoComponent implements OnInit {
     );
   }
 
-  eliminarProducto(id:any){
-    this._productoService.eliminarProducto(id).subscribe(data=>{
-      this.toastr.error('producto eliminado con exito',id);
-      this.obtenerProductos();
-    },error=>{
-      console.log(error);
-    }); 
+  eliminarProducto(id: any) {
+    this._productoService.eliminarProducto(id).subscribe(
+      (data) => {
+        this.toastr.error('producto eliminado con exito', id);
+        this.obtenerProductos();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
