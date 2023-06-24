@@ -36,7 +36,7 @@ import { ProductoService } from '../../services/producto.service';
     if(this.id!==null){
       //EDITAMOS
       this._productoService.editarProducto(this.id,PRODUCTO).subscribe(data=>{
-        this.toastr.info('El producto fue actualizado con exito','Producto Actualizado');
+        this.toastr.success(PRODUCTO.nombre, 'Producto fue Actualizado con éxito');
         this.router.navigate(['/']);
       },error=>{
         console.log(error);
@@ -52,9 +52,6 @@ import { ProductoService } from '../../services/producto.service';
         this.productoForm.reset();
       })
     }
-    console.log(PRODUCTO);
-    this.toastr.success(PRODUCTO.nombre, 'Producto Registrado');
-    this.router.navigate(['/']);
   }
 
   esEditar(){
