@@ -3,17 +3,17 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card">
                 <div class="card-body text-center">
-                    <span class="titulo">CREAR PRODUCTO</span>
+                    <span class="titulo">AGREGAR NUEVA CASA</span>
                     <form class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
-                        <label class="form-label"><i class="fa-solid fa-newspaper"></i>Captura el producto</label>
+                        <label class="form-label"><i class="fa-solid fa-newspaper"></i>Captura la nueva propiedad</label>
                         <div class="mb-3">
-                            <input type="text" formControlName="producto" class="form-control form-control-lg" placeholder="Producto">
+                            <input type="text" formControlName="producto" class="form-control form-control-lg" placeholder="Nombre de la propiedad">
                             <div class="text-danger" *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched">
-                                <span>El nombre del producto<strong> es obligatorio</strong></span>
+                                <span>El nombre de la propiedad<strong> es obligatorio</strong></span>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="text" formControlName="categoria" class="form-control form-control-lg" placeholder="Categoria">
+                            <input type="text" formControlName="categoria" class="form-control form-control-lg" placeholder="Renta o Venta">
                             <div class="text-danger" *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched">
                                 <span>El nombre de la categoria <strong>Es obligatoria</strong></span>
                             </div>
@@ -30,8 +30,16 @@
                                 <span>El precio es <strong>requerido</strong></span>
                             </div>
                         </div>
-                        <button routerLink="/" class="btn btn-secondary btn-lg float-start">Volver</button>
-                        <button type="submit" [disabled]="productoForm.invalid" class="btn btn-success btn-lg float-end">Aceptar</button>
+                        <button routerLink="/" class="btn btn-secondary btn-lg float-start">
+                            <i class="fas fa-arrow-left"></i>
+                            Volver
+                          </button>
+                          
+                        <button type="submit" [disabled]="productoForm.invalid" class="btn btn-success btn-lg float-end">
+                            <i class="fas fa-check-circle"></i>
+                            Aceptar
+                          </button>
+                          
                     </form>
                 </div>
             </div>

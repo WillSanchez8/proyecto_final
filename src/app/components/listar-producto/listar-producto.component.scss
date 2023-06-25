@@ -1,4 +1,47 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 .fa-solid {
     cursor: pointer;
     margin-left: 7px;
 }
+//boton de nuevo
+.custom-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, #33ccff, #3366ff);
+    border: none;
+    outline: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-button:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .custom-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-button:hover:before {
+    opacity: 1;
+  }
+  
+  
+
+  
