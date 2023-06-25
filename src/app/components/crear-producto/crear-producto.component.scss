@@ -3,3 +3,83 @@
     margin-left: 7px;
     font-size: 10px;
 }
+//boton de volver
+.btn.btn-secondary.btn-lg.float-start {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #222;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .btn.btn-secondary.btn-lg.float-start:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+    background-size: 200% 200%;
+    transition: background-position 0.3s;
+  }
+  
+  .btn.btn-secondary.btn-lg.float-start i {
+    margin-right: 5px;
+  }
+  
+  .btn.btn-secondary.btn-lg.float-start:hover {
+    transform: translateY(-5px);
+    background-color: #555;
+  }
+  
+  .btn.btn-secondary.btn-lg.float-start:hover:before {
+    background-position: -100% -100%;
+  }
+
+  //boton de aceptar
+  .btn.btn-success.btn-lg.float-end {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #00cc66;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .btn.btn-success.btn-lg.float-end:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+    background-size: 200% 200%;
+    transition: background-position 0.3s;
+  }
+  
+  .btn.btn-success.btn-lg.float-end i {
+    margin-right: 5px;
+  }
+  
+  .btn.btn-success.btn-lg.float-end:hover {
+    transform: translateY(-5px);
+    background-color: #009933;
+  }
+  
+  .btn.btn-success.btn-lg.float-end:hover:before {
+    background-position: -100% -100%;
+  }
+  
