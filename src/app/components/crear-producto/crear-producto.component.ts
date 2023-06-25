@@ -4,6 +4,7 @@ import { Producto } from '../../models/producto';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductoService } from '../../services/producto.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-crear-producto',
@@ -37,7 +38,6 @@ import { ProductoService } from '../../services/producto.service';
       //EDITAMOS
       this._productoService.editarProducto(this.id,PRODUCTO).subscribe(data=>{
         this.toastr.success(PRODUCTO.nombre, 'Producto fue Actualizado con éxito');
-        this.router.navigate(['/']);
       },error=>{
         console.log(error);
         this.productoForm.reset();
