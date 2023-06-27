@@ -11,13 +11,12 @@
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(to right, #33ccff, #3366ff);
+    color: #000000;
+    background: #81D4FA;
     border: none;
     outline: none;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
-  
   .custom-button:before {
     content: "";
     position: absolute;
@@ -28,7 +27,7 @@
     height: 20px;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(11, 11, 11, 0.8);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -38,10 +37,31 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   }
   
-  .custom-button:hover:before {
+  .custom-button1:hover:before {
     opacity: 1;
   }
-  
-  
 
-  
+#miTabla{
+  border-collapse: collapse;
+}
+
+#miTabla th,
+#miTabla td {
+  padding: 10px;
+  /*esta es para el borde de la pagina*/
+  border: 1px solid  #003A88;
+  /*esta es para el fondo de la tabla*/
+}
+
+#miTabla tr.hover {
+  background-color: #020101;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+tbody tr:hover {  
+  background-color: #E3F2FD;  
+}
+#miTabla tr:hover {
+  font-weight: bold;
+  transition: height 0.3s ease;
+
+}
