@@ -4,6 +4,7 @@ import { Producto } from '../../models/producto';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductoService } from '../../services/producto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-producto',
@@ -35,19 +36,33 @@ import { ProductoService } from '../../services/producto.service';
     }
     if(this.id!==null){
       //EDITAMOS
-      this._productoService.editarProducto(this.id,PRODUCTO).subscribe(data=>{
-        this.toastr.success(PRODUCTO.nombre, 'Producto fue Actualizado con éxito');
-        this.router.navigate(['/']);
-      },error=>{
+      this._productoService.editarProducto(this.id, PRODUCTO).subscribe(
+        (data) => {
+          Swal.fire({
+            title: 'Éxito',
+            text: 'Producto fue actualizado con éxito',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+          }).then(() => {
+            this.router.navigate(['/']);
+          });
+        },error=>{
         console.log(error);
         this.productoForm.reset();
       })
     }else{
       console.log(PRODUCTO);
-      this._productoService.registrarProducto(PRODUCTO).subscribe(data=>{
-        this.toastr.success(PRODUCTO.nombre,'Producto Registrado');
-        this.router.navigate(['/']);
-      },error=>{
+      this._productoService.registrarProducto(PRODUCTO).subscribe(
+        (data) => {
+          Swal.fire({
+            title: 'Éxito',
+            text: 'Producto registrado',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+          }).then(() => {
+            this.router.navigate(['/']);
+          });
+        },error=>{
         console.log(error);
         this.productoForm.reset();
       })
@@ -68,10 +83,7 @@ import { ProductoService } from '../../services/producto.service';
       })
     }
   }
-
-
   ngOnInit(): void {
     this.esEditar();
-  
 }
 }

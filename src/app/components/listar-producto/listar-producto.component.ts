@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
 import { Producto } from 'src/app/models/producto';
 import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-listar-producto',
@@ -14,8 +16,9 @@ export class ListarProductoComponent implements OnInit {
   constructor(
     private _productoService: ProductoService,
     private toastr: ToastrService
+    
   ) {}
-
+   
   ngOnInit(): void {
     this.obtenerProductos();
   }
@@ -35,8 +38,14 @@ export class ListarProductoComponent implements OnInit {
   eliminarProducto(id: any) {
     this._productoService.eliminarProducto(id).subscribe(
       (data) => {
-        this.toastr.error('producto eliminado con exito', id);
-        this.obtenerProductos();
+        Swal.fire({
+          title: 'Éxito',
+          text: 'Producto eliminado con éxito',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        }).then(() => {
+          this.obtenerProductos();
+        });
       },
       (error) => {
         console.log(error);
@@ -44,3 +53,4 @@ export class ListarProductoComponent implements OnInit {
     );
   }
 }
+
