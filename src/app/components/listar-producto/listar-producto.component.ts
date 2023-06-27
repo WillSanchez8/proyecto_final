@@ -40,7 +40,7 @@ export class ListarProductoComponent implements OnInit {
       (data) => {
         Swal.fire({
           title: 'Éxito',
-          text: 'Producto eliminado con éxito',
+          text: 'Propiedad eliminada con éxito',
           icon: 'success',
           confirmButtonText: 'Aceptar',
         }).then(() => {

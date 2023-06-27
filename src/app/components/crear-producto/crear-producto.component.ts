@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 })
   export class CrearProductoComponent implements OnInit{
   productoForm:FormGroup;
-  titulo='Agregar Producto';
+  titulo='AGREGAR NUEVA CASA';
   id: string | null;
     constructor(private fb : FormBuilder , private router:Router, private toastr: ToastrService, private _productoService:ProductoService, private aRouter:ActivatedRoute){
       this.productoForm=this.fb.group({
@@ -40,7 +40,7 @@ import Swal from 'sweetalert2';
         (data) => {
           Swal.fire({
             title: 'Éxito',
-            text: 'Producto fue actualizado con éxito',
+            text: 'Propiedad fue actualizada con éxito',
             icon: 'success',
             confirmButtonText: 'Aceptar',
           }).then(() => {
@@ -56,7 +56,7 @@ import Swal from 'sweetalert2';
         (data) => {
           Swal.fire({
             title: 'Éxito',
-            text: 'Producto registrado',
+            text: 'Propiedad registrada',
             icon: 'success',
             confirmButtonText: 'Aceptar',
           }).then(() => {
@@ -71,7 +71,7 @@ import Swal from 'sweetalert2';
 
   esEditar(){
     if(this.id!==null){
-      this.titulo='Editar Producto';
+      this.titulo='Editar Propiedad';
       this._productoService.obtenerProducto(this.id).subscribe(data=>{
         console.log(data);
         this.productoForm.setValue({
